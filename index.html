@@ -1,0 +1,274 @@
+<!-- Ian Cooley -->
+<!-- Penguin Site -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Title --> 
+		<title>Penguin Site</title>
+		<!-- Metas -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="author" content="Ian W Cooley">
+		<meta name="description" content="The seventeen species of penguin">
+		<!-- Styles -->
+		<link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="styles/my_styles.css" rel="stylesheet">
+		<!-- Scripts -->
+		<script type="text/javascript" src="scripts/d3/d3.v3.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Header -->
+			<div id="header" class="row">
+				<div id="headercol1" class="col-sm-12 headercol">
+					<h1>All the Penguins</h1>
+					<h2> in the world </h2>
+					<h4>by <a href="http://www.github.com/ianwcooley" target="_blank">Ian W Cooley</a></h4>
+				</div>
+				<div id="headercol2" class="col-sm-12 headercol">
+					<svg id="svg1" width="300" height="300">
+					</svg>
+					<svg id="svg2" width="200" height="200">
+					</svg>
+					<img id="aptenodytes_forsteri_silver" 
+						src="images/aptenodytes_forsteri_silver.png">
+					<img id="aptenodytes_patagonicus_silver" 
+						src="images/aptenodytes_patagonicus_silver.png">
+					<img id="eudyptes_sclateri_silver" 
+						src="images/eudyptes_sclateri_silver.png">
+					<img id="eudyptes_schlegeli_silver" 
+						src="images/eudyptes_schlegeli_silver.png">
+					<img id="eudyptes_chrysolophus_silver" 
+						src="images/eudyptes_chrysolophus_silver.png">
+					<img id="eudyptes_chrysocome_silver" 
+						src="images/eudyptes_chrysocome_silver.png">
+					<img id="eudyptes_pachyrhynchus_silver" 
+						src="images/eudyptes_pachyrhynchus_silver.png">
+					<img id="eudyptes_robustus_silver" 
+						src="images/eudyptes_robustus_silver.png">
+					<img id="pygoscelis_papua_silver" 
+						src="images/pygoscelis_papua_silver.png">
+					<img id="pygoscelis_adeliae_silver" 
+						src="images/pygoscelis_adeliae_silver.png">
+					<img id="pygoscelis_antarctica_silver" 
+						src="images/pygoscelis_antarctica_silver.png">
+					<img id="spheniscus_demersus_silver" 
+						src="images/spheniscus_demersus_silver.png">
+					<img id="spheniscus_humboldti_silver" 
+						src="images/spheniscus_humboldti_silver.png">
+					<img id="spheniscus_magellanicus_silver" 
+						src="images/spheniscus_magellanicus_silver.png">
+					<img id="spheniscus_mendiculus_silver" 
+						src="images/spheniscus_mendiculus_silver.png">
+					<img id="megadyptes_antipodes_silver" 
+						src="images/megadyptes_antipodes_silver.png">
+					<img id="eudyptula_minor_silver" 
+						src="images/eudyptula_minor_silver.png">
+				</div>
+			</div>
+			
+			<!-- Aptenodytes -->
+			<div class="row">
+				<div id="gap1" class="col-sm-12 gap">
+					<h1 class="background_text">Genus Aptenodytes</h1>
+				</div>
+			</div>
+			<!-- Row 1 -->
+			<div id="row1" class="row">
+				<div id="row1col1" class="col-sm-6 row1col">
+					<img id="aptenodytes_forsteri" 
+						src="images/aptenodytes_forsteri.png">
+					<p>Aptenodytes Forsteri
+						<br>
+						<i>The Emperor Penguin</i>
+					</p>
+				</div>
+				<div id="row1col2" class="col-sm-6 row1col">
+					<img id="aptenodytes_patagonicus" 
+						src="images/aptenodytes_patagonicus.png">
+					<p>Aptenodytes Patagonicus
+						<br>
+						<i>The King Penguin</i>
+					</p>
+				</div>
+			</div>
+			
+			<!-- Eudyptes -->
+			<div class="row">
+				<div id="gap2" class="col-sm-12 gap">
+					<h1 class="background_text">Genus Eudyptes</h1>
+				</div>
+			</div>
+			<!-- Row 2 -->
+			<div id="row2" class="row">
+				<div id="row2col1" class="col-sm-4 row2col">
+					<img id="eudyptes_sclateri" 
+							 src="images/eudyptes_sclateri.png">
+					<p>Eudyptes Sclateri
+						<br>
+						<i>The Erect-Crested Penguin</i>
+					</p>
+				</div>
+				<div id="row2col2" class="col-sm-4 row2col">
+					<img id="eudyptes_schlegeli" 
+							 src="images/eudyptes_schlegeli.png">
+					<p>Eudyptes Schlegeli
+						<br>
+						<i>The Royal Penguin</i>
+					</p>
+				</div>
+				<div id="row2col3" class="col-sm-4 row2col">
+					<img id="eudyptes_chrysolophus" 
+							 src="images/eudyptes_chrysolophus.png">
+					<p>Eudyptes Chrysolophus
+						<br>
+						<i>The Macaroni Penguin</i>
+					</p>
+				</div>
+			</div>
+			<!-- Row 3 -->
+			<div id="row3" class="row">
+				<div id="row3col1" class="col-sm-4 row3col">
+					<img id="eudyptes_chrysocome" 
+							 src="images/eudyptes_chrysocome.png">
+					<p>Eudyptes Chrysocome
+						<br>
+						<i>The Rockhopper Penguin</i>
+					</p>
+				</div>
+				<div id="row3col2" class="col-sm-4 row3col">
+					<img id="eudyptes_pachyrhynchus" 
+							 src="images/eudyptes_pachyrhynchus.png">
+					<p>Eudyptes Pachyrhynchus
+						<br>
+						<i>The Fiordland Penguin</i>
+					</p>
+				</div>
+				<div id="row3col3" class="col-sm-4 row3col">
+					<img id="eudyptes_robustus" 
+							 src="images/eudyptes_robustus.png">
+					<p>Eudyptes Robustus
+						<br>
+						<i>The Snares Penguin</i>
+					</p>
+				</div>
+			</div>
+			
+			<!-- Pygoscelis -->
+			<div class="row">
+				<div id="gap3" class="col-sm-12 gap">
+					<h1 class="background_text">Genus Pygoscelis</h1>
+				</div>
+			</div>
+			<!-- Row 4 -->
+			<div id="row4" class="row">
+				<div id="row4col1" class="col-sm-4 row4col">
+					<img id ="pygoscelis_papua" 
+							 src="images/pygoscelis_papua.png">
+					<p>Pygoscelis Papua
+						<br>
+						<i>The Gentoo Penguin</i>
+					</p>
+				</div>
+				<div id="row4col2" class="col-sm-4 row4col">
+					<img id="pygoscelis_adeliae" 
+							 src="images/pygoscelis_adeliae.png">
+					<p>Pygoscelis Adeliae
+						<br>
+						<i>The Adelie Penguin</i>
+					</p>
+				</div>
+				<div id="row4col3" class="col-sm-4 row4col">
+					<img id="pygoscelis_antarctica" 
+							 src="images/pygoscelis_antarctica.png">
+					<p>Pygoscelis Antarctica
+						<br>
+						<i>The Chinstrap Penguin</i>
+					</p>
+				</div>
+			</div>
+
+			<!-- Spheniscus -->
+			<div class="row">
+				<div id="gap4" class="col-sm-12 gap">
+					<h1 class="background_text">Genus Spheniscus</h1>
+				</div>
+			</div>
+			<!-- Row 5 -->
+			<div id="row5" class="row">
+				<div id="row5col1" class="col-sm-6 row5col">
+					<img id="spheniscus_demersus" 
+							 src="images/spheniscus_demersus.png">
+					<p>Spheniscus Demersus
+						<br>
+						<i>The African Penguin</i>
+					</p>
+				</div>
+				<div id="row5col2" class="col-sm-6 row5col">
+					<img id="spheniscus_humboldti" 
+							 src="images/spheniscus_humboldti.png">
+					<p>Spheniscus Humboldti
+						<br>
+						<i>The Humboldt Penguin</i>
+					</p>
+				</div>
+			</div>
+			<!-- Row 6 -->
+			<div id="row6" class="row">
+				<div id="row6col1" class="col-sm-6 row6col">
+					<img id="spheniscus_magellanicus" 
+							 src="images/spheniscus_magellanicus.png">
+					<p>Spheniscus Magellanicus
+						<br>
+						<i>The Magellanic Penguin</i>
+					</p>
+				</div>
+				<div id="row6col2" class="col-sm-6 row6col">
+					<img id="spheniscus_mendiculus" 
+							 src="images/spheniscus_mendiculus.png">
+					<p>Spheniscus Mendiculus
+						<br>
+						<i>The Galapagos Penguin</i>
+					</p>
+				</div>
+			</div>
+			<!-- Megadyptes & Eudyptula -->
+			<div class="row">
+				<div id="gap5" class="col-sm-12 gap">
+					<h1 class="background_text">Genus Megadyptes & Eudyptula</h1>
+				</div>
+			</div>
+			<!-- Row 7 -->
+			<div id="row7" class="row">
+				<div id="row7col1" class="col-sm-6 row7col">
+					<img id="megadyptes_antipodes" 
+							 src="images/megadyptes_antipodes.png">
+					<p>Megadyptes Antipodes
+						<br>
+						<i>The Yellow-eyed Penguin</i>
+					</p>
+				</div>
+				<div id="row7col2" class="col-sm-6 row7col">
+					<img id="eudyptula_minor" 
+							 src="images/eudyptula_minor.png">
+					<p>Eudyptula Minor
+						<br>
+						<i>The Little Blue Penguin</i>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" 
+			src="scripts/jquery/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" 
+			src="scripts/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" 
+			src="scripts/my_scripts/heptadecagon_1.js"></script>
+		<script type="text/javascript" 
+			src="scripts/my_scripts/heptadecagon_2.js"></script>
+	</body>
+</html>

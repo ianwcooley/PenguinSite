@@ -1,0 +1,174 @@
+#headercol1 {
+		color: rgb(190, 190, 190);
+		text-align: center;
+		font-family: 'ActionMan', sans-serif;
+		h1 {
+			margin-top: 50px;
+			text-shadow: -2px 2px 2px rgb(190, 190, 190);
+			font-size: 350%;
+		}
+		h2 {
+			font-size: 250%;
+		}
+		h4 {
+			margin: 20px 0;	
+		}
+	}
+	#headercol2 {
+		height: 350px;
+		margin-bottom: 50px;
+		#svg1 {
+			@media (min-width: 568px) {
+				display: block;
+				@include center();
+				margin-left: -150px;
+				margin-top: -150px;
+			}
+			@media (max-width: 567px) {
+				display: none;
+			}
+		}
+		#svg2 {
+			@media (min-width: 568px) {
+				display: none;
+			}
+			@media (max-width: 567px) {
+				display: block;
+				@include center();
+				margin-left: -100px;
+				margin-top: -100px;
+			}
+		}
+		#aptenodytes_forsteri_silver {
+			@include center();
+			margin-left: -107px;
+			margin-top: -185px;	
+		}
+		#aptenodytes_patagonicus_silver {
+			@include center();
+			margin-left: -87px;
+			margin-top: -152px;
+		}
+		#eudyptes_sclateri_silver {
+			@include center();
+			margin-left: -77px;
+			margin-top: -107px;
+		}
+		#eudyptes_schlegeli_silver {
+			@include center();
+			margin-left: -87px;
+			margin-top: -117px;
+		}
+		#eudyptes_chrysolophus_silver {
+			@include center();
+			margin-left: -87px;
+			margin-top: -117px;
+		}
+		#eudyptes_chrysocome_silver {
+			@include center();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#eudyptes_pachyrhynchus_silver {
+			@include center();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#eudyptes_robustus_silver {
+			@include center();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#pygoscelis_papua_silver {
+			@include center();
+			margin-left: -105px;
+			margin-top: -125px;
+		}
+		#pygoscelis_adeliae_silver {
+			@include center();
+			margin-left: -97px;
+			margin-top: -122px;
+		}
+		#pygoscelis_antarctica_silver {
+			@include center();
+			margin-left: -97px;
+			margin-top: -122px;
+		}
+		#spheniscus_demersus_silver {
+			@include center();
+			margin-left: -80px;
+			margin-top: -107px;
+		}
+		#spheniscus_humboldti_silver{
+			@include center();
+			margin-left: -80px;
+			margin-top: -107px;
+		}
+		#spheniscus_magellanicus_silver {
+			@include center();
+			margin-left: -87px;
+			margin-top: -107px;
+		}
+		#spheniscus_mendiculus_silver {
+			@include center();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#megadyptes_antipodes_silver {
+			@include center();
+			margin-left: -92px;
+			margin-top: -117px;
+		}
+		#eudyptula_minor_silver {
+			@include center();
+			margin-left: -60px;
+			margin-top: -65px;
+		}
+
+		$list: #aptenodytes_forsteri_silver 
+			#aptenodytes_patagonicus_silver 
+			#eudyptes_sclateri_silver 
+			#eudyptes_schlegeli_silver 
+			#eudyptes_chrysolophus_silver 
+			#eudyptes_chrysocome_silver 
+			#eudyptes_pachyrhynchus_silver 
+			#eudyptes_robustus_silver 
+			#pygoscelis_papua_silver 
+			#pygoscelis_adeliae_silver
+			#pygoscelis_antarctica_silver 
+			#spheniscus_demersus_silver 
+			#spheniscus_humboldti_silver 
+			#spheniscus_magellanicus_silver
+			#spheniscus_mendiculus_silver 
+			#megadyptes_antipodes_silver 
+			#eudyptula_minor_silver;
+
+		$i: 0;
+		@media (min-width: 568px) {
+			@each $penguin in $list{
+				#{$penguin} {
+					-ms-transform: translate(150px * cos($i * 1deg), 150px * sin($i * 1deg)) 
+						scale(0.15, 0.15) rotate($i * 1deg + 90deg);
+					-webkit-transform: translate(150px * cos($i * 1deg), 150px * sin($i * 1deg)) 
+						scale(0.15, 0.15) roate($i * 1deg + 90deg);
+					transform: translate(150px * cos($i * 1deg), 150px * sin($i * 1deg)) 
+						scale(0.15, 0.15) rotate($i * 1deg + 90deg);
+				}
+				$i: $i + (360)/17;
+			}
+		}
+		$i: 0;
+		@media (max-width: 567px) {
+			@each $penguin in $list{
+				#{$penguin} {
+					-ms-transform: translate(100px * cos($i * 1deg), 100px * sin($i * 1deg)) 
+						scale(0.15, 0.15) rotate($i * 1deg + 90deg);
+					-webkit-transform: translate(100px * cos($i * 1deg), 100px * sin($i * 1deg)) 
+						scale(0.15, 0.15) roate($i * 1deg + 90deg);
+					transform: translate(100px * cos($i * 1deg), 100px * sin($i * 1deg)) 
+						scale(0.15, 0.15) rotate($i * 1deg + 90deg);
+				}
+				$i: $i + (360)/17;
+			}
+		}
+	}

@@ -1,0 +1,259 @@
+/* Ian Cooley */
+/* Penguin Site */
+
+/* Fonts, Variables, and Math Functions **************************************/
+
+@import 'fvm';
+
+/* Mixins ********************************************************************/
+
+@import 'mixins';
+
+/* Styles ********************************************************************/
+
+/* General Styling */
+
+div {
+	position: relative;
+	background: $background;
+}
+
+.container {
+	width: auto;
+}
+
+.background_text {
+	@include background_text();
+}
+
+/* DOM Styling */
+
+// Header
+#header {
+	@include border();
+	@import 'headers';
+}
+
+// Gap 1
+#gap1 {
+	height: 600px;
+	@include background_image();
+	background-image: url("../images/genus_aptenodytes.jpg");
+}
+
+// Row 1
+#row1 {
+	.row1col {
+		height: 600px;
+		@include border();
+		#aptenodytes_forsteri {
+			@include penguin();
+			margin-left: -107px;
+			margin-top: -185px;
+		}
+		#aptenodytes_patagonicus {
+			@include reverse_penguin();
+			margin-left: -87px;
+			margin-top: -152px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}
+
+// Gap 2
+#gap2 {
+	height: 600px;
+	@include background_image();
+	background-image: url("../images/genus_eudyptes.jpg");
+}
+
+// Row 2
+#row2 {
+	.row2col {
+		height: 500px;
+		@include border();
+		#eudyptes_sclateri {
+			@include penguin();
+			margin-left: -77px;
+			margin-top: -107px;
+		}
+		#eudyptes_schlegeli {
+			@include reverse_penguin();
+			margin-left: -87px;
+			margin-top: -117px;
+		}
+		#eudyptes_chrysolophus {
+			@include reverse_penguin();
+			margin-left: -87px;
+			margin-top: -117px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}
+
+// Row 3
+#row3 {
+	.row3col {
+		height: 500px;
+		@include border();
+		#eudyptes_chrysocome {
+			@include penguin();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#eudyptes_pachyrhynchus {
+			@include penguin();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		#eudyptes_robustus {
+			@include reverse_penguin();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}
+
+// Gap 3
+#gap3 {
+	height: 600px;
+	@include background_image();
+	background-image: url("../images/genus_pygoscelis.jpg");
+}
+
+// Row 4
+#row4 {
+	.row4col {
+		height: 500px;
+		@include border();
+		#pygoscelis_papua {
+			@include penguin();
+			margin-left: -105px;
+			margin-top: -125px;
+		}
+		#pygoscelis_adeliae {
+			@include penguin();
+			margin-left: -97px;
+			margin-top: -122px;
+		}
+		#pygoscelis_antarctica {
+			@include reverse_penguin();
+			margin-left: -97px;
+			margin-top: -122px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}
+
+// Gap 4
+#gap4 {
+	height: 600px;
+	@include background_image();
+	background-image: url("../images/genus_spheniscus.jpg");
+}
+
+// Row 5
+#row5 {
+	.row5col {
+		height: 450px;
+		@include border();
+		#spheniscus_demersus {
+			@include penguin();
+			margin-left: -80px;
+			margin-top: -107px;
+		}
+		#spheniscus_humboldti {
+			@include penguin();
+			margin-left: -80px;
+			margin-top: -107px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}
+// Row 6
+#row6 {
+	.row6col {
+		height: 450px;
+		@include border();
+		#spheniscus_magellanicus {
+			@include reverse_penguin();
+			margin-left: -87px;
+			margin-top: -107px;
+		}
+		#spheniscus_mendiculus {
+			@include reverse_penguin();
+			margin-left: -67px;
+			margin-top: -87px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}	
+}
+
+// Gap 5
+#gap5 {
+	height: 600px;
+	@include background_image();
+	background-image: url("../images/genus_megadyptes.jpg"); 
+}
+
+// Row 7
+#row7 {
+	.row7col {
+		height: 450px;
+		@include border();
+		#megadyptes_antipodes {
+			@include penguin();
+			margin-left: -92px;
+			margin-top: -117px;
+		}
+		#eudyptula_minor {
+			@include reverse_penguin();
+			margin-left: -60px;
+			margin-top: -65px;
+		}
+		p {
+			@include penguin_title();
+			i {
+				font-family: serif;
+				font-size: 75%;
+			}
+		}
+	}
+}

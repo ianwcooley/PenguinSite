@@ -1,0 +1,838 @@
+/* Ian Cooley */
+/* Penguin Site */
+/* Fonts, Variables, and Math Functions **************************************/
+@font-face {
+  font-family: 'ActionMan';
+  src: url("fonts/actionman_regular_macroman/Action_Man-webfont.eot");
+  src: url("fonts/actionman_regular_macroman/Action_Man-webfont.eot?iefix") format("eot"), url("fonts/actionman_regular_macroman/Action_Man-webfont.woff") format("woff"), url("fonts/actionman_regular_macroman/Action_Man-webfont.ttf") format("truetype"), url("fonts/actionman_regular_macroman/Action_Man-webfont.svg#webfont") format("svg"); }
+@font-face {
+  font-family: 'ArchivoBlack';
+  src: url("fonts/archivo-black/ArchivoBlack-Regular.otf"); }
+/* Mixins ********************************************************************/
+/* Styles ********************************************************************/
+/* General Styling */
+div {
+  position: relative;
+  background: url("../images/crossword.png"); }
+
+.container {
+  width: auto; }
+
+.background_text {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'ActionMan', sans-serif;
+  font-size: 350%;
+  text-align: center;
+  text-shadow: -2px 2px 2px black;
+  color: white; }
+
+/* DOM Styling */
+#header {
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #header #headercol1 {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif; }
+    #header #headercol1 h1 {
+      margin-top: 50px;
+      text-shadow: -2px 2px 2px #bebebe;
+      font-size: 350%; }
+    #header #headercol1 h2 {
+      font-size: 250%; }
+    #header #headercol1 h4 {
+      margin: 20px 0; }
+  #header #headercol2 {
+    height: 350px;
+    margin-bottom: 50px; }
+    @media (min-width: 568px) {
+      #header #headercol2 #svg1 {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -150px;
+        margin-top: -150px; } }
+    @media (max-width: 567px) {
+      #header #headercol2 #svg1 {
+        display: none; } }
+    @media (min-width: 568px) {
+      #header #headercol2 #svg2 {
+        display: none; } }
+    @media (max-width: 567px) {
+      #header #headercol2 #svg2 {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px; } }
+    #header #headercol2 #aptenodytes_forsteri_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -107px;
+      margin-top: -185px; }
+    #header #headercol2 #aptenodytes_patagonicus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -87px;
+      margin-top: -152px; }
+    #header #headercol2 #eudyptes_sclateri_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -77px;
+      margin-top: -107px; }
+    #header #headercol2 #eudyptes_schlegeli_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -87px;
+      margin-top: -117px; }
+    #header #headercol2 #eudyptes_chrysolophus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -87px;
+      margin-top: -117px; }
+    #header #headercol2 #eudyptes_chrysocome_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -67px;
+      margin-top: -87px; }
+    #header #headercol2 #eudyptes_pachyrhynchus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -67px;
+      margin-top: -87px; }
+    #header #headercol2 #eudyptes_robustus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -67px;
+      margin-top: -87px; }
+    #header #headercol2 #pygoscelis_papua_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -105px;
+      margin-top: -125px; }
+    #header #headercol2 #pygoscelis_adeliae_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -97px;
+      margin-top: -122px; }
+    #header #headercol2 #pygoscelis_antarctica_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -97px;
+      margin-top: -122px; }
+    #header #headercol2 #spheniscus_demersus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -80px;
+      margin-top: -107px; }
+    #header #headercol2 #spheniscus_humboldti_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -80px;
+      margin-top: -107px; }
+    #header #headercol2 #spheniscus_magellanicus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -87px;
+      margin-top: -107px; }
+    #header #headercol2 #spheniscus_mendiculus_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -67px;
+      margin-top: -87px; }
+    #header #headercol2 #megadyptes_antipodes_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -92px;
+      margin-top: -117px; }
+    #header #headercol2 #eudyptula_minor_silver {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -60px;
+      margin-top: -65px; }
+    @media (min-width: 568px) {
+      #header #headercol2 #aptenodytes_forsteri_silver {
+        -ms-transform: translate(150px, 0px) scale(0.15, 0.15) rotate(90deg);
+        -webkit-transform: translate(150px, 0px) scale(0.15, 0.15) roate(90deg);
+        transform: translate(150px, 0px) scale(0.15, 0.15) rotate(90deg); }
+      #header #headercol2 #aptenodytes_patagonicus_silver {
+        -ms-transform: translate(139.8708344107px, 54.1862499281px) scale(0.15, 0.15) rotate(111.1764705882deg);
+        -webkit-transform: translate(139.8708344107px, 54.1862499281px) scale(0.15, 0.15) roate(111.1764705882deg);
+        transform: translate(139.8708344107px, 54.1862499281px) scale(0.15, 0.15) rotate(111.1764705882deg); }
+      #header #headercol2 #eudyptes_sclateri_silver {
+        -ms-transform: translate(110.8513375831px, 101.054346547px) scale(0.15, 0.15) rotate(132.3529411765deg);
+        -webkit-transform: translate(110.8513375831px, 101.054346547px) scale(0.15, 0.15) roate(132.3529411765deg);
+        transform: translate(110.8513375831px, 101.054346547px) scale(0.15, 0.15) rotate(132.3529411765deg); }
+      #header #headercol2 #eudyptes_schlegeli_silver {
+        -ms-transform: translate(66.8607533665px, 134.2744937033px) scale(0.15, 0.15) rotate(153.5294117647deg);
+        -webkit-transform: translate(66.8607533665px, 134.2744937033px) scale(0.15, 0.15) roate(153.5294117647deg);
+        transform: translate(66.8607533665px, 134.2744937033px) scale(0.15, 0.15) rotate(153.5294117647deg); }
+      #header #headercol2 #eudyptes_chrysolophus_silver {
+        -ms-transform: translate(13.8402539195px, 149.3601264443px) scale(0.15, 0.15) rotate(174.7058823529deg);
+        -webkit-transform: translate(13.8402539195px, 149.3601264443px) scale(0.15, 0.15) roate(174.7058823529deg);
+        transform: translate(13.8402539195px, 149.3601264443px) scale(0.15, 0.15) rotate(174.7058823529deg); }
+      #header #headercol2 #eudyptes_chrysocome_silver {
+        -ms-transform: translate(-41.0494485108px, 144.2738464759px) scale(0.15, 0.15) rotate(195.8823529412deg);
+        -webkit-transform: translate(-41.0494485108px, 144.2738464759px) scale(0.15, 0.15) roate(195.8823529412deg);
+        transform: translate(-41.0494485108px, 144.2738464759px) scale(0.15, 0.15) rotate(195.8823529412deg); }
+      #header #headercol2 #eudyptes_pachyrhynchus_silver {
+        -ms-transform: translate(-90.3951954569px, 119.702584092px) scale(0.15, 0.15) rotate(217.0588235294deg);
+        -webkit-transform: translate(-90.3951954569px, 119.702584092px) scale(0.15, 0.15) roate(217.0588235294deg);
+        transform: translate(-90.3951954569px, 119.702584092px) scale(0.15, 0.15) rotate(217.0588235294deg); }
+      #header #headercol2 #eudyptes_robustus_silver {
+        -ms-transform: translate(-127.5325703593px, 78.9648244316px) scale(0.15, 0.15) rotate(238.2352941176deg);
+        -webkit-transform: translate(-127.5325703593px, 78.9648244316px) scale(0.15, 0.15) roate(238.2352941176deg);
+        transform: translate(-127.5325703593px, 78.9648244316px) scale(0.15, 0.15) rotate(238.2352941176deg); }
+      #header #headercol2 #pygoscelis_papua_silver {
+        -ms-transform: translate(-147.4459649496px, 27.5624276728px) scale(0.15, 0.15) rotate(259.4117647059deg);
+        -webkit-transform: translate(-147.4459649496px, 27.5624276728px) scale(0.15, 0.15) roate(259.4117647059deg);
+        transform: translate(-147.4459649496px, 27.5624276728px) scale(0.15, 0.15) rotate(259.4117647059deg); }
+      #header #headercol2 #pygoscelis_adeliae_silver {
+        -ms-transform: translate(-147.4459649128px, -27.5624276667px) scale(0.15, 0.15) rotate(280.5882352941deg);
+        -webkit-transform: translate(-147.4459649128px, -27.5624276667px) scale(0.15, 0.15) roate(280.5882352941deg);
+        transform: translate(-147.4459649128px, -27.5624276667px) scale(0.15, 0.15) rotate(280.5882352941deg); }
+      #header #headercol2 #pygoscelis_antarctica_silver {
+        -ms-transform: translate(-127.5325699569px, -78.9648243668px) scale(0.15, 0.15) rotate(301.7647058824deg);
+        -webkit-transform: translate(-127.5325699569px, -78.9648243668px) scale(0.15, 0.15) roate(301.7647058824deg);
+        transform: translate(-127.5325699569px, -78.9648243668px) scale(0.15, 0.15) rotate(301.7647058824deg); }
+      #header #headercol2 #spheniscus_demersus_silver {
+        -ms-transform: translate(-90.3951921972px, -119.7025835145px) scale(0.15, 0.15) rotate(322.9411764706deg);
+        -webkit-transform: translate(-90.3951921972px, -119.7025835145px) scale(0.15, 0.15) roate(322.9411764706deg);
+        transform: translate(-90.3951921972px, -119.7025835145px) scale(0.15, 0.15) rotate(322.9411764706deg); }
+      #header #headercol2 #spheniscus_humboldti_silver {
+        -ms-transform: translate(-41.0494265268px, -144.2738422248px) scale(0.15, 0.15) rotate(344.1176470588deg);
+        -webkit-transform: translate(-41.0494265268px, -144.2738422248px) scale(0.15, 0.15) roate(344.1176470588deg);
+        transform: translate(-41.0494265268px, -144.2738422248px) scale(0.15, 0.15) rotate(344.1176470588deg); }
+      #header #headercol2 #spheniscus_magellanicus_silver {
+        -ms-transform: translate(13.8403810525px, -149.3600997989px) scale(0.15, 0.15) rotate(365.2941176471deg);
+        -webkit-transform: translate(13.8403810525px, -149.3600997989px) scale(0.15, 0.15) roate(365.2941176471deg);
+        transform: translate(13.8403810525px, -149.3600997989px) scale(0.15, 0.15) rotate(365.2941176471deg); }
+      #header #headercol2 #spheniscus_mendiculus_silver {
+        -ms-transform: translate(66.8613982911px, -134.2743480648px) scale(0.15, 0.15) rotate(386.4705882353deg);
+        -webkit-transform: translate(66.8613982911px, -134.2743480648px) scale(0.15, 0.15) roate(386.4705882353deg);
+        transform: translate(66.8613982911px, -134.2743480648px) scale(0.15, 0.15) rotate(386.4705882353deg); }
+      #header #headercol2 #megadyptes_antipodes_silver {
+        -ms-transform: translate(110.8542596746px, -101.0536391583px) scale(0.15, 0.15) rotate(407.6470588235deg);
+        -webkit-transform: translate(110.8542596746px, -101.0536391583px) scale(0.15, 0.15) roate(407.6470588235deg);
+        transform: translate(110.8542596746px, -101.0536391583px) scale(0.15, 0.15) rotate(407.6470588235deg); }
+      #header #headercol2 #eudyptula_minor_silver {
+        -ms-transform: translate(139.882832963px, -54.1831498714px) scale(0.15, 0.15) rotate(428.8235294118deg);
+        -webkit-transform: translate(139.882832963px, -54.1831498714px) scale(0.15, 0.15) roate(428.8235294118deg);
+        transform: translate(139.882832963px, -54.1831498714px) scale(0.15, 0.15) rotate(428.8235294118deg); } }
+    @media (max-width: 567px) {
+      #header #headercol2 #aptenodytes_forsteri_silver {
+        -ms-transform: translate(100px, 0px) scale(0.15, 0.15) rotate(90deg);
+        -webkit-transform: translate(100px, 0px) scale(0.15, 0.15) roate(90deg);
+        transform: translate(100px, 0px) scale(0.15, 0.15) rotate(90deg); }
+      #header #headercol2 #aptenodytes_patagonicus_silver {
+        -ms-transform: translate(93.2472229404px, 36.1241666187px) scale(0.15, 0.15) rotate(111.1764705882deg);
+        -webkit-transform: translate(93.2472229404px, 36.1241666187px) scale(0.15, 0.15) roate(111.1764705882deg);
+        transform: translate(93.2472229404px, 36.1241666187px) scale(0.15, 0.15) rotate(111.1764705882deg); }
+      #header #headercol2 #eudyptes_sclateri_silver {
+        -ms-transform: translate(73.9008917221px, 67.3695643647px) scale(0.15, 0.15) rotate(132.3529411765deg);
+        -webkit-transform: translate(73.9008917221px, 67.3695643647px) scale(0.15, 0.15) roate(132.3529411765deg);
+        transform: translate(73.9008917221px, 67.3695643647px) scale(0.15, 0.15) rotate(132.3529411765deg); }
+      #header #headercol2 #eudyptes_schlegeli_silver {
+        -ms-transform: translate(44.5738355776px, 89.5163291355px) scale(0.15, 0.15) rotate(153.5294117647deg);
+        -webkit-transform: translate(44.5738355776px, 89.5163291355px) scale(0.15, 0.15) roate(153.5294117647deg);
+        transform: translate(44.5738355776px, 89.5163291355px) scale(0.15, 0.15) rotate(153.5294117647deg); }
+      #header #headercol2 #eudyptes_chrysolophus_silver {
+        -ms-transform: translate(9.2268359463px, 99.5734176295px) scale(0.15, 0.15) rotate(174.7058823529deg);
+        -webkit-transform: translate(9.2268359463px, 99.5734176295px) scale(0.15, 0.15) roate(174.7058823529deg);
+        transform: translate(9.2268359463px, 99.5734176295px) scale(0.15, 0.15) rotate(174.7058823529deg); }
+      #header #headercol2 #eudyptes_chrysocome_silver {
+        -ms-transform: translate(-27.3662990072px, 96.1825643173px) scale(0.15, 0.15) rotate(195.8823529412deg);
+        -webkit-transform: translate(-27.3662990072px, 96.1825643173px) scale(0.15, 0.15) roate(195.8823529412deg);
+        transform: translate(-27.3662990072px, 96.1825643173px) scale(0.15, 0.15) rotate(195.8823529412deg); }
+      #header #headercol2 #eudyptes_pachyrhynchus_silver {
+        -ms-transform: translate(-60.2634636379px, 79.801722728px) scale(0.15, 0.15) rotate(217.0588235294deg);
+        -webkit-transform: translate(-60.2634636379px, 79.801722728px) scale(0.15, 0.15) roate(217.0588235294deg);
+        transform: translate(-60.2634636379px, 79.801722728px) scale(0.15, 0.15) rotate(217.0588235294deg); }
+      #header #headercol2 #eudyptes_robustus_silver {
+        -ms-transform: translate(-85.0217135729px, 52.6432162877px) scale(0.15, 0.15) rotate(238.2352941176deg);
+        -webkit-transform: translate(-85.0217135729px, 52.6432162877px) scale(0.15, 0.15) roate(238.2352941176deg);
+        transform: translate(-85.0217135729px, 52.6432162877px) scale(0.15, 0.15) rotate(238.2352941176deg); }
+      #header #headercol2 #pygoscelis_papua_silver {
+        -ms-transform: translate(-98.2973099664px, 18.3749517819px) scale(0.15, 0.15) rotate(259.4117647059deg);
+        -webkit-transform: translate(-98.2973099664px, 18.3749517819px) scale(0.15, 0.15) roate(259.4117647059deg);
+        transform: translate(-98.2973099664px, 18.3749517819px) scale(0.15, 0.15) rotate(259.4117647059deg); }
+      #header #headercol2 #pygoscelis_adeliae_silver {
+        -ms-transform: translate(-98.2973099418px, -18.3749517778px) scale(0.15, 0.15) rotate(280.5882352941deg);
+        -webkit-transform: translate(-98.2973099418px, -18.3749517778px) scale(0.15, 0.15) roate(280.5882352941deg);
+        transform: translate(-98.2973099418px, -18.3749517778px) scale(0.15, 0.15) rotate(280.5882352941deg); }
+      #header #headercol2 #pygoscelis_antarctica_silver {
+        -ms-transform: translate(-85.0217133046px, -52.6432162446px) scale(0.15, 0.15) rotate(301.7647058824deg);
+        -webkit-transform: translate(-85.0217133046px, -52.6432162446px) scale(0.15, 0.15) roate(301.7647058824deg);
+        transform: translate(-85.0217133046px, -52.6432162446px) scale(0.15, 0.15) rotate(301.7647058824deg); }
+      #header #headercol2 #spheniscus_demersus_silver {
+        -ms-transform: translate(-60.2634614648px, -79.801722343px) scale(0.15, 0.15) rotate(322.9411764706deg);
+        -webkit-transform: translate(-60.2634614648px, -79.801722343px) scale(0.15, 0.15) roate(322.9411764706deg);
+        transform: translate(-60.2634614648px, -79.801722343px) scale(0.15, 0.15) rotate(322.9411764706deg); }
+      #header #headercol2 #spheniscus_humboldti_silver {
+        -ms-transform: translate(-27.3662843512px, -96.1825614832px) scale(0.15, 0.15) rotate(344.1176470588deg);
+        -webkit-transform: translate(-27.3662843512px, -96.1825614832px) scale(0.15, 0.15) roate(344.1176470588deg);
+        transform: translate(-27.3662843512px, -96.1825614832px) scale(0.15, 0.15) rotate(344.1176470588deg); }
+      #header #headercol2 #spheniscus_magellanicus_silver {
+        -ms-transform: translate(9.2269207016px, -99.573399866px) scale(0.15, 0.15) rotate(365.2941176471deg);
+        -webkit-transform: translate(9.2269207016px, -99.573399866px) scale(0.15, 0.15) roate(365.2941176471deg);
+        transform: translate(9.2269207016px, -99.573399866px) scale(0.15, 0.15) rotate(365.2941176471deg); }
+      #header #headercol2 #spheniscus_mendiculus_silver {
+        -ms-transform: translate(44.5742655274px, -89.5162320432px) scale(0.15, 0.15) rotate(386.4705882353deg);
+        -webkit-transform: translate(44.5742655274px, -89.5162320432px) scale(0.15, 0.15) roate(386.4705882353deg);
+        transform: translate(44.5742655274px, -89.5162320432px) scale(0.15, 0.15) rotate(386.4705882353deg); }
+      #header #headercol2 #megadyptes_antipodes_silver {
+        -ms-transform: translate(73.9028397831px, -67.3690927722px) scale(0.15, 0.15) rotate(407.6470588235deg);
+        -webkit-transform: translate(73.9028397831px, -67.3690927722px) scale(0.15, 0.15) roate(407.6470588235deg);
+        transform: translate(73.9028397831px, -67.3690927722px) scale(0.15, 0.15) rotate(407.6470588235deg); }
+      #header #headercol2 #eudyptula_minor_silver {
+        -ms-transform: translate(93.2552219753px, -36.1220999143px) scale(0.15, 0.15) rotate(428.8235294118deg);
+        -webkit-transform: translate(93.2552219753px, -36.1220999143px) scale(0.15, 0.15) roate(428.8235294118deg);
+        transform: translate(93.2552219753px, -36.1220999143px) scale(0.15, 0.15) rotate(428.8235294118deg); } }
+
+#gap1 {
+  height: 600px;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-image: url("../images/genus_aptenodytes.jpg"); }
+
+#row1 .row1col {
+  height: 600px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row1 .row1col #aptenodytes_forsteri {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -107px;
+    margin-top: -185px; }
+    @media (min-width: 568px) {
+      #row1 .row1col #aptenodytes_forsteri {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row1 .row1col #aptenodytes_forsteri {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row1 .row1col #aptenodytes_patagonicus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -87px;
+    margin-top: -152px; }
+    @media (min-width: 568px) {
+      #row1 .row1col #aptenodytes_patagonicus {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row1 .row1col #aptenodytes_patagonicus {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row1 .row1col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row1 .row1col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#gap2 {
+  height: 600px;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-image: url("../images/genus_eudyptes.jpg"); }
+
+#row2 .row2col {
+  height: 500px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row2 .row2col #eudyptes_sclateri {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -77px;
+    margin-top: -107px; }
+    @media (min-width: 568px) {
+      #row2 .row2col #eudyptes_sclateri {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row2 .row2col #eudyptes_sclateri {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row2 .row2col #eudyptes_schlegeli {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -87px;
+    margin-top: -117px; }
+    @media (min-width: 568px) {
+      #row2 .row2col #eudyptes_schlegeli {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row2 .row2col #eudyptes_schlegeli {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row2 .row2col #eudyptes_chrysolophus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -87px;
+    margin-top: -117px; }
+    @media (min-width: 568px) {
+      #row2 .row2col #eudyptes_chrysolophus {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row2 .row2col #eudyptes_chrysolophus {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row2 .row2col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row2 .row2col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#row3 .row3col {
+  height: 500px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row3 .row3col #eudyptes_chrysocome {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -67px;
+    margin-top: -87px; }
+    @media (min-width: 568px) {
+      #row3 .row3col #eudyptes_chrysocome {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row3 .row3col #eudyptes_chrysocome {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row3 .row3col #eudyptes_pachyrhynchus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -67px;
+    margin-top: -87px; }
+    @media (min-width: 568px) {
+      #row3 .row3col #eudyptes_pachyrhynchus {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row3 .row3col #eudyptes_pachyrhynchus {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row3 .row3col #eudyptes_robustus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -67px;
+    margin-top: -87px; }
+    @media (min-width: 568px) {
+      #row3 .row3col #eudyptes_robustus {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row3 .row3col #eudyptes_robustus {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row3 .row3col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row3 .row3col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#gap3 {
+  height: 600px;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-image: url("../images/genus_pygoscelis.jpg"); }
+
+#row4 .row4col {
+  height: 500px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row4 .row4col #pygoscelis_papua {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -105px;
+    margin-top: -125px; }
+    @media (min-width: 568px) {
+      #row4 .row4col #pygoscelis_papua {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row4 .row4col #pygoscelis_papua {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row4 .row4col #pygoscelis_adeliae {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -97px;
+    margin-top: -122px; }
+    @media (min-width: 568px) {
+      #row4 .row4col #pygoscelis_adeliae {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row4 .row4col #pygoscelis_adeliae {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row4 .row4col #pygoscelis_antarctica {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -97px;
+    margin-top: -122px; }
+    @media (min-width: 568px) {
+      #row4 .row4col #pygoscelis_antarctica {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row4 .row4col #pygoscelis_antarctica {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row4 .row4col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row4 .row4col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#gap4 {
+  height: 600px;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-image: url("../images/genus_spheniscus.jpg"); }
+
+#row5 .row5col {
+  height: 450px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row5 .row5col #spheniscus_demersus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -80px;
+    margin-top: -107px; }
+    @media (min-width: 568px) {
+      #row5 .row5col #spheniscus_demersus {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row5 .row5col #spheniscus_demersus {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row5 .row5col #spheniscus_humboldti {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -80px;
+    margin-top: -107px; }
+    @media (min-width: 568px) {
+      #row5 .row5col #spheniscus_humboldti {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row5 .row5col #spheniscus_humboldti {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row5 .row5col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row5 .row5col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#row6 .row6col {
+  height: 450px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row6 .row6col #spheniscus_magellanicus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -87px;
+    margin-top: -107px; }
+    @media (min-width: 568px) {
+      #row6 .row6col #spheniscus_magellanicus {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row6 .row6col #spheniscus_magellanicus {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row6 .row6col #spheniscus_mendiculus {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -67px;
+    margin-top: -87px; }
+    @media (min-width: 568px) {
+      #row6 .row6col #spheniscus_mendiculus {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row6 .row6col #spheniscus_mendiculus {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row6 .row6col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row6 .row6col p i {
+      font-family: serif;
+      font-size: 75%; }
+
+#gap5 {
+  height: 600px;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-image: url("../images/genus_megadyptes.jpg"); }
+
+#row7 .row7col {
+  height: 450px;
+  border-left: 3px solid #bebebe;
+  border-top: 3px solid #e6e6e6;
+  border-right: 3px solid #e6e6e6;
+  border-bottom: 3px solid #bebebe; }
+  #row7 .row7col #megadyptes_antipodes {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -92px;
+    margin-top: -117px; }
+    @media (min-width: 568px) {
+      #row7 .row7col #megadyptes_antipodes {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1); } }
+    @media (max-width: 567px) {
+      #row7 .row7col #megadyptes_antipodes {
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8); } }
+  #row7 .row7col #eudyptula_minor {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=-12, OffY=8, Color='#444')";
+    -webkit-filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(8px 8px 7px rgba(0, 0, 0, 0.4));
+    margin-left: -60px;
+    margin-top: -65px; }
+    @media (min-width: 568px) {
+      #row7 .row7col #eudyptula_minor {
+        -ms-transform: scale(1, 1) rotateY(180deg);
+        -webkit-transform: scale(1, 1) rotateY(180deg);
+        transform: scale(1, 1) rotateY(180deg); } }
+    @media (max-width: 567px) {
+      #row7 .row7col #eudyptula_minor {
+        -ms-transform: scale(0.8, 0.8) rotateY(180deg);
+        -webkit-transform: scale(0.8, 0.8) rotateY(180deg);
+        transform: scale(0.8, 0.8) rotateY(180deg); } }
+  #row7 .row7col p {
+    color: #bebebe;
+    text-align: center;
+    font-family: 'ActionMan', sans-serif;
+    font-size: 175%;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, 0); }
+    #row7 .row7col p i {
+      font-family: serif;
+      font-size: 75%; }
