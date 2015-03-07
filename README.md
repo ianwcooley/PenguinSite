@@ -1,6 +1,9 @@
 # PenguinSite
 The seventeen species of penguin, grouped according to genus.
 
+http://ianwcooley.github.io/PenguinSite/
+
+Notes:
 
 Safari doesn't like my sass.
 
